@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg: #ffffff;
+    --bg-subtle: #fafafa;
+    --bg-card: #ffffff;
+    --border: #ececec;
+    --border-strong: #d4d4d4;
+    --text: #0a0a0b;
+    --text-muted: #525252;
+    --text-subtle: #737373;
+    --accent: #2563eb;
+    --accent-soft: #eff6ff;
+  }
+
+  .dark {
+    --bg: #0a0a0b;
+    --bg-subtle: #111113;
+    --bg-card: #131316;
+    --border: #1e1e22;
+    --border-strong: #2a2a30;
+    --text: #fafafa;
+    --text-muted: #a1a1aa;
+    --text-subtle: #71717a;
+    --accent: #60a5fa;
+    --accent-soft: #0b1220;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', system-ui, sans-serif;
+    transition: background-color 0.4s ease, color 0.4s ease;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: var(--accent);
+    color: #fff;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border-radius: 8px;
+    border: 2px solid var(--bg);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-subtle);
+  }
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-12;
+  }
+
+  .surface-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+
+  .text-muted {
+    color: var(--text-muted);
+  }
+  .text-subtle {
+    color: var(--text-subtle);
+  }
+  .border-soft {
+    border-color: var(--border);
+  }
+  .border-strong {
+    border-color: var(--border-strong);
+  }
+  .bg-base {
+    background-color: var(--bg);
+  }
+  .bg-subtle {
+    background-color: var(--bg-subtle);
+  }
+  .bg-card {
+    background-color: var(--bg-card);
+  }
+
+  /* Subtle grid background */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 40%, transparent 100%);
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(var(--border-strong) 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, #000 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 70% 50% at 50% 50%, #000 30%, transparent 80%);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+}
