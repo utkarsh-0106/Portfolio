@@ -4,7 +4,7 @@ A modern, responsive portfolio website showcasing my projects, technical skills,
 
 Built with a focus on performance, accessibility, clean architecture, and user experience, this portfolio reflects my approach to building scalable software rather than simply presenting projects.
 
-🌐 **Live Website:** https://YOUR-PORTFOLIO-LINK.vercel.app
+🌐 **Live Website:** portfolio-rho-five-5y7dgemvl8.vercel.app
 
 ---
 
