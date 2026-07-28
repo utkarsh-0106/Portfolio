@@ -33,7 +33,7 @@ export const certifications: Certification[] = [
   {
     title: 'Flipkart GRiD',
     issuer: 'Flipkart',
-    date: '2025',
+    date: '2024',
     skills: ['Algorithms', 'Systems Design', 'Problem Solving'],
   },
   {
@@ -53,5 +53,16 @@ export const certifications: Certification[] = [
   issuer: 'Poonawalla Fincorp (via Unstop)',
   date: '2026',
   skills: ['Artificial Intelligence','Hackathon Participation','Problem Solving','Team Collaboration'],
+},
+{
+  title: 'Nation Building Case Study Competition',
+  issuer: 'Nation with NaMo',
+  date: '2026',
+  skills: [
+    'Case Study Analysis',
+    'Strategic Thinking',
+    'Problem Solving',
+    'Business Analysis'
+  ],
 },
 ];

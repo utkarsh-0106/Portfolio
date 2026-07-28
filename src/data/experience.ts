@@ -11,7 +11,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: 'Full Stack Web Development Training',
     org: 'Self-directed + Online Program',
-    period: '2023 — 2024',
+    period: 'April 2026 - May 2026',
     type: 'Training',
     description:
       'Completed an intensive full stack development program covering both backend and frontend engineering, building and shipping real projects along the way.',
@@ -24,7 +24,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: 'Adobe India Hackathon',
     org: 'Adobe',
-    period: '2024',
+    period: '2025',
     type: 'Hackathon',
     description:
       'Competed in a national-level hackathon, building a working solution under tight time constraints against teams from across the country.',
@@ -49,7 +49,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: 'HackVriksh',
     org: 'HackVriksh',
-    period: '2024',
+    period: '2025',
     type: 'Hackathon',
     description:
       'Built and pitched a project end-to-end at a competitive hackathon, taking it from idea to working demo.',
@@ -61,7 +61,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: 'TATA Crucible',
     org: 'TATA',
-    period: '2024',
+    period: '2025',
     type: 'Hackathon',
     description:
       'Competed in the TATA Crucible business and tech quiz, testing breadth across technology, business, and current trends.',
@@ -71,29 +71,17 @@ export const experiences: ExperienceItem[] = [
     ],
   },
   {
-    title: 'IBM AI Fundamentals',
-    org: 'IBM',
-    period: '2024',
-    type: 'Technical Learning',
-    description:
-      'Earned IBM\'s AI Fundamentals credential, building a structured understanding of artificial intelligence concepts and workflows.',
-    highlights: [
-      'Learned the AI lifecycle end to end.',
-      'Understood where AI fits — and where it does not — in real products.',
-    ],
-  },
-  {
     title: 'Academic Projects',
     org: 'Engineering Curriculum',
-    period: '2022 — 2024',
+    period: '2023 — 2026',
     type: 'Academic Project',
     description:
       'Built a portfolio of academic projects spanning analytics, recommendation systems, and developer tooling — each chosen to stretch a different skill.',
     highlights: [
       'Institutional Performance Analytics System (Python, Streamlit).',
+      'AI Developer Toolbox (React, deployed on Vercel).',
       'CineMatch movie recommendation system (ML, deployed on Render).',
       'Track-n-Test DSA progress tracker.',
-      'AI Developer Toolbox (React, deployed on Vercel).',
     ],
   },
 ];
