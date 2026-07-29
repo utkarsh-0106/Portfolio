@@ -87,9 +87,6 @@ export function HomePage() {
             <ButtonLink to="/contact" variant="secondary" size="lg">
               Let's Connect
             </ButtonLink>
-            <ButtonLink to="/contact" variant="ghost" size="lg">
-              Contact Me
-            </ButtonLink>
           </motion.div>
 
           <motion.div
