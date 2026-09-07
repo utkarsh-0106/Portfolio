@@ -5,6 +5,8 @@ import { Reveal } from '@/components/Reveal';
 import { experiences, type ExperienceItem } from '@/data/experience';
 
 const typeColor: Record<ExperienceItem['type'], string> = {
+  Apprenticeship: 'text-blue-500',
+  Internship: 'text-blue-500',
   Training: 'text-accent-500 dark:text-accent-400',
   Hackathon: 'text-amber-500',
   'Technical Learning': 'text-emerald-500',

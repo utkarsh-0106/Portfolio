@@ -2,23 +2,39 @@ export interface ExperienceItem {
   title: string;
   org: string;
   period: string;
-  type: 'Training' | 'Hackathon' | 'Technical Learning' | 'Academic Project';
+  type: 'Apprenticeship' | 'Internship' | 'Training' | 'Hackathon' | 'Technical Learning' | 'Academic Project';
   description: string;
   highlights: string[];
 }
 
 export const experiences: ExperienceItem[] = [
   {
-    title: 'Full Stack Web Development Training',
-    org: 'Self-directed + Online Program',
-    period: 'April 2026 - May 2026',
-    type: 'Training',
+    title: 'Full Stack Web Development Intern',
+    org: 'ElevanceSkills',
+    period: 'Sep 2026 - Present',
+    type: 'Internship',
     description:
-      'Completed an intensive full stack development program covering both backend and frontend engineering, building and shipping real projects along the way.',
+      'Working on a full stack web application, implementing backend APIs, authentication, social features, and security-focused functionality.',
     highlights: [
-      'Built REST APIs with Node.js, Express, and Spring Boot.',
-      'Designed and queried relational and document databases.',
-      'Shipped full stack projects with React frontends.',
+      'Developed REST APIs using Node.js, Express, MongoDB, and Mongoose.',
+      'Implemented Firebase Admin authentication with backend token verification and protected API routes.',
+      'Built social features including posts, likes, comments, shares, follows, friend requests, and notifications.',
+      'Implemented posting quotas, rate limiting, media validation, and authorization for protected operations.',
+      'Integrated Next.js and Redux frontend features with backend REST APIs for the Public Space module.',
+      'Created and executed backend tests covering authentication, posting, authorization, and social functionality.',
+    ],
+  },
+  {
+    title: 'Software Engineer Intern',
+    org: 'CETPA Infotech — IBM SkillsBuild & NASSCOM Program',
+    period: 'June 2026 - Aug 2026',
+    type: 'Apprenticeship',
+    description:
+      'Architected and delivered responsive frontend components and modular backend microservices in an agile environment, focusing on clean code architecture and resilient API design.',
+    highlights: [
+      'Built responsive UI components and modular Node.js backend services.',
+      'Implemented robust API error-handling logic and input validation middleware to increase system resilience.',
+      'Practiced OOP principles, asynchronous programming patterns, and strict peer code reviews via Git.',
     ],
   },
   {
