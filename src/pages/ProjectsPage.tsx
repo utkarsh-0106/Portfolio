@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, Github, ExternalLink, PlayCircle } from 'lucide-react';
 import { Seo } from '@/components/Seo';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Reveal, staggerContainer, staggerItem } from '@/components/Reveal';
+import { staggerContainer, staggerItem } from '@/components/Reveal';
 import { projects } from '@/data/projects';
 
 export function ProjectsPage() {

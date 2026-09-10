@@ -1,5 +1,5 @@
 import { useRef, type ReactNode } from 'react';
-import { motion, useInView, type Variants } from 'framer-motion';
+import { motion, useInView, useReducedMotion, type Variants } from 'framer-motion';
 
 interface RevealProps {
   children: ReactNode;
@@ -12,14 +12,15 @@ interface RevealProps {
 export function Reveal({ children, delay = 0, y = 24, className, once = true }: RevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once, margin: '-80px' });
+  const reduce = useReducedMotion();
 
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
-      transition={{ duration: 0.6, delay, ease: [0.22, 1, 0.36, 1] }}
+      initial={reduce ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      animate={inView || reduce ? { opacity: 1, y: 0 } : { opacity: 0, y }}
+      transition={{ duration: reduce ? 0 : 0.6, delay: reduce ? 0 : delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </motion.div>

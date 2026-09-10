@@ -18,22 +18,16 @@ export function SectionHeading({
   className,
 }: SectionHeadingProps) {
   return (
-    <div
-      className={cn(
-        'max-w-2xl',
-        align === 'center' && 'mx-auto text-center',
-        className
-      )}
-    >
+    <div className={cn('max-w-2xl', align === 'center' && 'mx-auto text-center', className)}>
       {eyebrow && (
         <Reveal>
-          <span className="mb-3 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent-500 dark:text-accent-400">
+          <span className="mb-3 inline-block font-mono text-xs uppercase tracking-[0.2em] text-accent-500">
             {eyebrow}
           </span>
         </Reveal>
       )}
       <Reveal delay={0.05}>
-        <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl md:text-[2.75rem] text-balance">
+        <h2 className="font-display text-3xl font-semibold tracking-tight sm:text-4xl md:text-[2.75rem] text-balance">
           {title}
         </h2>
       </Reveal>

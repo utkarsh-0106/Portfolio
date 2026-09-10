@@ -5,20 +5,19 @@ import { navLinks, profile } from '@/data/profile';
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-soft">
+    <footer className="relative border-t border-soft">
       <div className="container-page py-14">
         <div className="flex flex-col gap-10 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
             <Link to="/" className="flex items-center gap-2.5">
-              <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--text)] text-[var(--bg)] font-mono text-sm font-bold">
-                U
+              <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--text)] font-mono text-sm font-bold text-[var(--bg)]">
+                U.
               </span>
-              <span className="font-medium tracking-tight">
-                Utkarsh<span className="text-muted">.dev</span>
-              </span>
+              <span className="font-display font-medium tracking-tight">Utkarsh</span>
             </Link>
             <p className="mt-4 text-sm text-muted text-pretty">
-              Backend Engineer & Full Stack Developer building scalable systems and modern software experiences.
+              Backend Engineer & Full Stack Developer building scalable systems and modern software
+              experiences.
             </p>
           </div>
 
@@ -36,9 +35,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-soft pt-6 sm:flex-row">
-          <p className="text-sm text-subtle">
-            © {year} Utkarsh Maheshwari. All rights reserved.
-          </p>
+          <p className="text-sm text-subtle">© {year} Utkarsh Maheshwari. All rights reserved.</p>
           <div className="flex items-center gap-2">
             <a
               href={profile.github}

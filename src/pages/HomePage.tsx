@@ -1,119 +1,278 @@
-import { motion } from 'framer-motion';
-import { Download, ArrowRight, Github, Linkedin, ChevronDown } from 'lucide-react';
-import { Seo } from '@/components/Seo';
-import { Button, ButtonLink } from '@/components/ui/Button';
+import {
+  ArrowRight,
+  Github,
+  Linkedin,
+  Mail,
+  ExternalLink,
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Reveal } from '@/components/Reveal';
 import { profile } from '@/data/profile';
+
+const technologies = [
+  { name: 'React', icon: '⚛', className: 'hero-tech-react' },
+  { name: 'Node.js', icon: '⬡', className: 'hero-tech-node' },
+  { name: 'Python', icon: '🐍', className: 'hero-tech-python' },
+  { name: 'AI / ML', icon: '✦', className: 'hero-tech-ai' },
+  { name: 'System Design', icon: '◉', className: 'hero-tech-system' },
+];
 
 export function HomePage() {
   return (
-    <>
-      <Seo
-        title="Backend Engineer & Full Stack Developer"
-        description="Utkarsh Maheshwari — Backend Engineer, Full Stack Developer, and AI enthusiast building scalable backend systems and modern software experiences."
-        path="/"
-      />
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-grid opacity-60" aria-hidden />
-        <div className="pointer-events-none absolute left-1/2 top-[-10%] h-[480px] w-[680px] -translate-x-1/2 rounded-full bg-accent-500/10 blur-[120px]" aria-hidden />
-        <div className="container-page relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center py-24 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mb-8"
-          >
-            <div className="absolute -inset-3 rounded-full bg-accent-500/20 blur-2xl" aria-hidden />
-            <img
-              src={profile.photo}
-              alt="Utkarsh Maheshwari"
-              loading="eager"
-              className="relative h-32 w-32 rounded-full object-cover ring-1 ring-soft sm:h-40 sm:w-40"
-            />
-          </motion.div>
+    <main className="reference-home">
 
-          <motion.span
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-5 inline-flex items-center gap-2 rounded-full border border-soft bg-card/60 px-3.5 py-1.5 font-mono text-xs text-muted backdrop-blur"
-          >
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500/70" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-            </span>
-            Available for opportunities
-          </motion.span>
+      {/* =====================================================
+          HERO
+      ====================================================== */}
+      <section className="reference-hero">
 
-          <motion.h1
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="text-4xl font-semibold tracking-tight sm:text-6xl md:text-7xl text-balance"
-          >
-            {profile.name}
-          </motion.h1>
+        <div className="reference-hero-grid" />
+        <div className="reference-glow reference-glow-one" />
+        <div className="reference-glow reference-glow-two" />
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.22 }}
-            className="mt-6 max-w-3xl text-lg leading-8 text-muted sm:text-xl"
-          >
-            {profile.tagline}
-          </motion.p>
+        <div className="reference-hero-content">
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="mt-5 rounded-full border border-soft bg-card/40 px-4 py-2 font-mono text-sm text-subtle backdrop-blur"
-          >
-            {profile.title}
-          </motion.p>
+          {/* =================================================
+              LEFT — TEXT CONTENT
+          ================================================== */}
+          <div className="reference-copy">
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.38 }}
-            className="mt-9 flex flex-wrap items-center justify-center gap-3"
-          >
-            <Button href={profile.resumeUrl} size="lg">
-              <Download size={16} /> Download Resume
-            </Button>
-            <ButtonLink to="/projects" variant="secondary" size="lg">
-              View Projects <ArrowRight size={16} />
-            </ButtonLink>
-            <ButtonLink to="/contact" variant="secondary" size="lg">
-              Let's Connect
-            </ButtonLink>
-          </motion.div>
+            <Reveal>
+              <div className="reference-eyebrow">
+                <span className="reference-eyebrow-dot" />
+                <span>CSE UNDERGRAD | CLASS OF 2027</span>
+              </div>
+            </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="mt-9 flex items-center gap-3"
-          >
-            <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="grid h-10 w-10 place-items-center rounded-full border border-soft text-muted transition-colors hover:border-strong hover:text-[var(--text)]">
-              <Github size={18} />
-            </a>
-            <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="grid h-10 w-10 place-items-center rounded-full border border-soft text-muted transition-colors hover:border-strong hover:text-[var(--text)]">
-              <Linkedin size={18} />
-            </a>
-          </motion.div>
+            <Reveal delay={0.08}>
+              <h1 className="reference-title">
+                <span>Building</span>
+                <span className="reference-title-accent">
+                  Systems.
+                </span>
+                <span>Exploring AI.</span>
+                <span className="reference-title-gradient">
+                  Creating Impact.
+                </span>
+              </h1>
+            </Reveal>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mt-16 flex flex-col items-center gap-2 text-subtle"
-          >
-            <span className="font-mono text-xs uppercase tracking-[0.2em]">Scroll</span>
-            <ChevronDown size={16} className="animate-scroll-bounce" />
-          </motion.div>
+            <Reveal delay={0.16}>
+              <p className="reference-description">
+                I&apos;m Utkarsh Maheshwari, a Computer Science undergraduate
+                focused on backend engineering and AI. I build reliable APIs,
+                data-driven systems, and AI-powered applications using Python,
+                C++, JavaScript, and modern backend technologies.
+              </p>
+            </Reveal>
+
+            <Reveal delay={0.22}>
+              <div className="reference-actions">
+                <Link
+                  to="/projects"
+                  className="reference-button primary"
+                >
+                  Explore Projects
+                  <ArrowRight size={20} />
+                </Link>
+
+                <Link
+                  to="/contact"
+                  className="reference-button secondary"
+                >
+                  Let&apos;s Connect
+                </Link>
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.28}>
+              <div className="reference-stats">
+                {profile.heroStats.map((stat, index) => (
+                  <div
+                    className="reference-stat"
+                    key={stat.label}
+                  >
+                    <strong>{stat.value}</strong>
+                    <span>{stat.label}</span>
+
+                    {index < profile.heroStats.length - 1 && (
+                      <span className="reference-stat-divider" />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+
+            <Reveal delay={0.34}>
+              <div className="reference-social">
+                <span>Connect with me</span>
+
+                <div className="reference-social-links">
+
+                  <a
+                    href="https://github.com/utkarsh-0106"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                  >
+                    <Github size={24} />
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/in/utkarsh-maheshwari-6b9978266/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={24} />
+                  </a>
+
+                  <a
+                    href="https://leetcode.com/u/utkarsh_mah0106/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LeetCode"
+                    className="leetcode-link"
+                  >
+                    LC
+                  </a>
+
+                  <a
+                    href="mailto:utkarsh.maheshwari0106@gmail.com"
+                    aria-label="Email"
+                  >
+                    <Mail size={24} />
+                  </a>
+
+                </div>
+              </div>
+            </Reveal>
+
+          </div>
+
+
+          {/* =================================================
+              RIGHT — HERO WORKSPACE
+          ================================================== */}
+          <div className="reference-art">
+
+            <div className="reference-art-frame">
+
+              <img
+                src="/hero-workspace.png"
+                alt="Illustrated developer workspace representing Utkarsh Maheshwari"
+                className="reference-art-image"
+              />
+
+            </div>
+
+
+            {/* Floating technology cards */}
+            <div className="reference-tech-stack">
+
+              {technologies.map((technology) => (
+                <div
+                  key={technology.name}
+                  className={`reference-tech-card ${technology.className}`}
+                >
+                  <span className="reference-tech-icon">
+                    {technology.icon}
+                  </span>
+
+                  <span>{technology.name}</span>
+                </div>
+              ))}
+
+            </div>
+
+
+            {/* Quote */}
+            <div className="reference-quote">
+              <span>“A better tomorrow,</span>
+              <span>built with code.”</span>
+              <small>— Utkarsh Maheshwari</small>
+            </div>
+
+          </div>
+
         </div>
+
+
+        {/* Scroll indicator */}
+        <div className="reference-scroll">
+          <span>Scroll to explore</span>
+          <span className="reference-scroll-arrow">↓</span>
+        </div>
+
       </section>
-    </>
+
+
+      {/* =====================================================
+          TECHNICAL FOUNDATION
+      ====================================================== */}
+      <section className="reference-foundation">
+
+        <div>
+          <span className="reference-section-kicker">
+            TECHNICAL FOUNDATION
+          </span>
+
+          <h2>Tools behind the work.</h2>
+        </div>
+
+        <div className="reference-foundation-link">
+          <Link to="/skills">
+            View all skills
+            <ExternalLink size={15} />
+          </Link>
+        </div>
+
+        <div className="reference-foundation-grid">
+
+          <Link
+            to="/skills"
+            className="reference-foundation-card"
+          >
+            <span>Python</span>
+            <small>Backend & automation</small>
+          </Link>
+
+          <Link
+            to="/skills"
+            className="reference-foundation-card"
+          >
+            <span>FastAPI</span>
+            <small>Reliable APIs</small>
+          </Link>
+
+          <Link
+            to="/skills"
+            className="reference-foundation-card"
+          >
+            <span>C++ / DSA</span>
+            <small>Problem solving</small>
+          </Link>
+
+          <Link
+            to="/skills"
+            className="reference-foundation-card"
+          >
+            <span>AI / RAG</span>
+            <small>Intelligent systems</small>
+          </Link>
+
+          <Link
+            to="/skills"
+            className="reference-foundation-card"
+          >
+            <span>System Design</span>
+            <small>Architecture</small>
+          </Link>
+
+        </div>
+
+      </section>
+
+    </main>
   );
 }

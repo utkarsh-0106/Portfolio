@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun, Github, Linkedin } from 'lucide-react';
+import { Menu, X, Moon, Sun, Github, Linkedin, ArrowRight } from 'lucide-react';
 import { useTheme } from '@/context/ThemeContext';
 import { navLinks, profile } from '@/data/profile';
+import { ButtonLink } from '@/components/ui/Button';
 import { cn } from '@/lib/cn';
 
 export function Navbar() {
@@ -28,40 +29,44 @@ export function Navbar() {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-all duration-300',
         scrolled
-          ? 'border-b border-soft bg-base/80 backdrop-blur-xl'
+          ? 'border-b border-soft bg-base backdrop-blur-xl'
           : 'border-b border-transparent bg-transparent'
       )}
     >
-      <nav className="container-page flex h-16 items-center justify-between">
+      <nav className="container-page flex h-16 items-center justify-between gap-3">
         <Link to="/" className="group flex items-center gap-2.5">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--text)] text-[var(--bg)] font-mono text-sm font-bold transition-transform group-hover:scale-105">
-            U
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--text)] font-mono text-sm font-bold text-[var(--bg)] transition-transform group-hover:scale-105">
+            U.
           </span>
-          <span className="hidden font-medium tracking-tight sm:block">
-            Utkarsh<span className="text-muted">.dev</span>
-          </span>
+          <span className="hidden font-display text-sm font-medium tracking-tight sm:block">Utkarsh</span>
         </Link>
 
-        {/* Desktop nav */}
-        <div className="hidden items-center gap-1 md:flex">
-          {navLinks
-            .filter((l) => l.path !== '/')
-            .map((link) => (
-              <NavLink
-                key={link.path}
-                to={link.path}
-                className={({ isActive }) =>
-                  cn(
-                    'rounded-lg px-3 py-2 text-sm font-medium transition-colors',
-                    isActive
-                      ? 'text-[var(--text)]'
-                      : 'text-muted hover:text-[var(--text)]'
-                  )
-                }
-              >
-                {link.label}
-              </NavLink>
-            ))}
+        <div className="hidden items-center gap-0.5 lg:flex">
+          {navLinks.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              end={link.path === '/'}
+              className={({ isActive }) =>
+                cn(
+                  'relative rounded-lg px-2.5 py-2 text-[13px] font-medium transition-colors',
+                  isActive ? 'text-[var(--text)]' : 'text-muted hover:text-[var(--text)]'
+                )
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  {link.label}
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-indicator"
+                      className="absolute inset-x-2 -bottom-0.5 h-px bg-gradient-to-r from-accent-500 to-violet-500"
+                    />
+                  )}
+                </>
+              )}
+            </NavLink>
+          ))}
         </div>
 
         <div className="flex items-center gap-1.5">
@@ -70,7 +75,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub"
-            className="hidden h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)] sm:grid"
+            className="hidden h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)] xl:grid"
           >
             <Github size={18} />
           </a>
@@ -79,7 +84,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
-            className="hidden h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)] sm:grid"
+            className="hidden h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)] xl:grid"
           >
             <Linkedin size={18} />
           </a>
@@ -90,17 +95,19 @@ export function Navbar() {
           >
             {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+          <ButtonLink to="/contact" size="sm" className="hidden sm:inline-flex">
+            Let's Build <ArrowRight size={14} />
+          </ButtonLink>
           <button
             onClick={() => setOpen((o) => !o)}
             aria-label="Menu"
-            className="grid h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)] md:hidden"
+            className="grid h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)] lg:hidden"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {open && (
           <motion.div
@@ -108,13 +115,14 @@ export function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="overflow-hidden border-b border-soft bg-base/95 backdrop-blur-xl md:hidden"
+            className="overflow-hidden border-b border-soft bg-base backdrop-blur-xl lg:hidden"
           >
             <div className="container-page flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
                   to={link.path}
+                  end={link.path === '/'}
                   className={({ isActive }) =>
                     cn(
                       'rounded-lg px-3 py-2.5 text-sm font-medium transition-colors',
@@ -127,6 +135,9 @@ export function Navbar() {
                   {link.label}
                 </NavLink>
               ))}
+              <ButtonLink to="/contact" className="mt-2">
+                Let's Build <ArrowRight size={14} />
+              </ButtonLink>
             </div>
           </motion.div>
         )}

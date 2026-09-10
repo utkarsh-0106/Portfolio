@@ -5,22 +5,27 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand accent — extremely subtle blue
         accent: {
           50: '#eff6ff',
           100: '#dbeafe',
           200: '#bfdbfe',
           300: '#93c5fd',
           400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
+          500: '#4F8CFF',
+          600: '#3b73e8',
           700: '#1d4ed8',
           800: '#1e40af',
           900: '#1e3a8a',
         },
+        violet: {
+          400: '#9b8cff',
+          500: '#7C6CFF',
+          600: '#6554e8',
+        },
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        display: ['Outfit', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
@@ -28,8 +33,8 @@ export default {
         '3xl': '24px',
       },
       spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
+        18: '4.5rem',
+        22: '5.5rem',
       },
       maxWidth: {
         '8xl': '88rem',
@@ -47,11 +52,21 @@ export default {
           '0%': { transform: 'rotate(0deg)' },
           '100%': { transform: 'rotate(360deg)' },
         },
+        orbit: {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(360deg)' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-6px)' },
+        },
       },
       animation: {
         'fade-in': 'fade-in 0.5s ease-out',
         'scroll-bounce': 'scroll-bounce 1.8s ease-in-out infinite',
         'spin-slow': 'spin-slow 24s linear infinite',
+        orbit: 'orbit 28s linear infinite',
+        float: 'float 5s ease-in-out infinite',
       },
     },
   },

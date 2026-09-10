@@ -6,7 +6,8 @@ export function CursorGlow() {
 
   useEffect(() => {
     const isTouch = window.matchMedia('(pointer: coarse)').matches;
-    if (isTouch) return;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isTouch || reduce) return;
 
     const move = (e: MouseEvent) => {
       setPos({ x: e.clientX, y: e.clientY });
@@ -25,14 +26,14 @@ export function CursorGlow() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none fixed z-[60] hidden md:block h-[400px] w-[400px] rounded-full opacity-0 transition-opacity duration-500"
+      className="pointer-events-none fixed z-[60] hidden h-[320px] w-[320px] rounded-full opacity-0 transition-opacity duration-500 md:block"
       style={{
-        opacity: visible ? 0.5 : 0,
-        left: pos.x - 200,
-        top: pos.y - 200,
+        opacity: visible ? 0.35 : 0,
+        left: pos.x - 160,
+        top: pos.y - 160,
         background:
-          'radial-gradient(circle, rgba(96,165,250,0.10) 0%, rgba(96,165,250,0) 60%)',
-        filter: 'blur(20px)',
+          'radial-gradient(circle, rgba(79,140,255,0.12) 0%, rgba(124,108,255,0.06) 40%, transparent 70%)',
+        filter: 'blur(18px)',
       }}
     />
   );

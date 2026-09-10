@@ -12,7 +12,7 @@ export function Card({ children, className, hover = true, ...rest }: CardProps) 
   return (
     <motion.div
       className={cn(
-        'surface-card rounded-2xl p-6 transition-colors duration-300',
+        'glass-panel rounded-2xl p-6 transition-colors duration-300',
         hover && 'hover:border-strong',
         className
       )}

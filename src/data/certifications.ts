@@ -3,6 +3,7 @@ export interface Certification {
   issuer: string;
   date: string;
   skills: string[];
+  credentialUrl?: string;
 }
 
 export const certifications: Certification[] = [

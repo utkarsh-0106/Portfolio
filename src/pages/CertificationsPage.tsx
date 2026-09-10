@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Award, ExternalLink, Calendar } from 'lucide-react';
 import { Seo } from '@/components/Seo';
 import { SectionHeading } from '@/components/ui/SectionHeading';
-import { Reveal, staggerContainer, staggerItem } from '@/components/Reveal';
+import { staggerContainer, staggerItem } from '@/components/Reveal';
 import { certifications } from '@/data/certifications';
 
 export function CertificationsPage() {

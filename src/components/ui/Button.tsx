@@ -14,9 +14,9 @@ interface BaseProps {
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent-600 text-white hover:bg-accent-500 dark:bg-accent-500 dark:hover:bg-accent-400 shadow-sm',
+    'bg-accent-500 text-white hover:bg-accent-400 shadow-[0_0_0_1px_rgba(79,140,255,0.25),0_10px_30px_rgba(79,140,255,0.18)]',
   secondary:
-    'bg-card text-[var(--text)] border border-soft hover:border-strong',
+    'bg-card text-[var(--text)] border border-soft hover:border-strong backdrop-blur-xl',
   ghost: 'text-muted hover:text-[var(--text)]',
 };
 
@@ -27,7 +27,7 @@ const sizes: Record<Size, string> = {
 };
 
 const base =
-  'inline-flex items-center justify-center gap-2 rounded-2xl font-medium transition-all duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)]';
+  'inline-flex items-center justify-center gap-2 rounded-2xl font-medium transition-all duration-200 active:scale-[0.97] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--bg)] disabled:pointer-events-none disabled:opacity-60';
 
 interface ButtonProps extends BaseProps {
   href?: string;
