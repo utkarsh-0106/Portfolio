@@ -4574,3 +4574,308 @@ header svg {
     min-height: 110px !important;
   }
 }
+
+/* =========================================================
+   RESUME BUTTON — CLEAN FINAL DESIGN
+   ========================================================= */
+
+.reference-actions .resume-button {
+  position: relative !important;
+  margin-top: 18px !important;
+  transform: translateY(8px) !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(48, 18, 68, 0.96),
+    rgba(22, 12, 32, 0.98)
+  ) !important;
+
+  border: 1px solid rgba(190, 110, 255, 0.9) !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 0 8px rgba(175, 90, 255, 0.5),
+    0 0 22px rgba(175, 90, 255, 0.32),
+    0 0 45px rgba(175, 90, 255, 0.18),
+    inset 0 0 16px rgba(175, 90, 255, 0.08) !important;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+.reference-actions .resume-button:hover {
+  transform: translateY(5px) scale(1.03) !important;
+
+  background: linear-gradient(
+    135deg,
+    rgba(90, 32, 125, 1),
+    rgba(48, 16, 70, 1)
+  ) !important;
+
+  border-color: rgba(225, 165, 255, 1) !important;
+
+  box-shadow:
+    0 0 12px rgba(190, 100, 255, 0.9),
+    0 0 30px rgba(190, 100, 255, 0.65),
+    0 0 65px rgba(190, 100, 255, 0.38),
+    inset 0 0 22px rgba(190, 100, 255, 0.15) !important;
+}
+
+/* =========================================================
+   VIEW RESUME — FORCE PURPLE STYLE
+   ========================================================= */
+
+#root .reference-actions .resume-button {
+  position: relative !important;
+  margin-top: 18px !important;
+  transform: translateY(8px) !important;
+
+  background: #301448 !important;
+  background-image: linear-gradient(
+    135deg,
+    #4a1d68 0%,
+    #24102f 100%
+  ) !important;
+
+  border: 1px solid #b66cff !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 0 8px rgba(180, 100, 255, 0.55),
+    0 0 20px rgba(180, 100, 255, 0.40),
+    0 0 40px rgba(180, 100, 255, 0.22),
+    inset 0 0 18px rgba(180, 100, 255, 0.12) !important;
+
+  transition:
+    transform 0.25s ease !important,
+    background 0.25s ease !important,
+    border-color 0.25s ease !important,
+    box-shadow 0.25s ease !important;
+}
+
+#root .reference-actions .resume-button:hover {
+  transform: translateY(5px) scale(1.04) !important;
+
+  background: #542078 !important;
+  background-image: linear-gradient(
+    135deg,
+    #7130a0 0%,
+    #351347 100%
+  ) !important;
+
+  border-color: #e0b0ff !important;
+
+  box-shadow:
+    0 0 12px rgba(195, 110, 255, 0.95),
+    0 0 30px rgba(195, 110, 255, 0.75),
+    0 0 60px rgba(195, 110, 255, 0.50),
+    inset 0 0 22px rgba(220, 150, 255, 0.18) !important;
+}
+
+
+/* =========================================================
+   VIEW RESUME — ACTUAL ELEMENT OVERRIDE
+   ========================================================= */
+
+#root a.reference-button.resume-cta-final {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  margin-top: 18px !important;
+  transform: translateY(8px) !important;
+
+  background: linear-gradient(
+    135deg,
+    #4b1d6b 0%,
+    #24102f 100%
+  ) !important;
+
+  border: 1px solid #b66cff !important;
+  color: #ffffff !important;
+
+  box-shadow:
+    0 0 8px rgba(182, 108, 255, 0.65),
+    0 0 20px rgba(182, 108, 255, 0.50),
+    0 0 40px rgba(182, 108, 255, 0.30),
+    inset 0 0 18px rgba(182, 108, 255, 0.12) !important;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+#root a.reference-button.resume-cta-final:hover {
+  transform: translateY(5px) scale(1.04) !important;
+
+  background: linear-gradient(
+    135deg,
+    #7130a0 0%,
+    #351347 100%
+  ) !important;
+
+  border-color: #e2b8ff !important;
+
+  box-shadow:
+    0 0 12px rgba(195, 110, 255, 1),
+    0 0 30px rgba(195, 110, 255, 0.80),
+    0 0 65px rgba(195, 110, 255, 0.55),
+    inset 0 0 24px rgba(220, 150, 255, 0.20) !important;
+}
+
+/* ===== RESUME BUTTON — SMALLER CARD ===== */
+
+.reference-actions + .resume-cta-final,
+.resume-cta-final {
+  width: 220px !important;
+  min-width: 220px !important;
+  max-width: 220px !important;
+
+  height: 46px !important;
+  min-height: 46px !important;
+
+  padding: 0 20px !important;
+  margin-top: 18px !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  box-sizing: border-box !important;
+}
+
+.resume-cta-final:hover {
+  transform: translateY(5px) scale(1.02) !important;
+
+  box-shadow:
+    0 0 12px rgba(185, 100, 255, 0.85),
+    0 0 28px rgba(185, 100, 255, 0.60),
+    0 0 55px rgba(185, 100, 255, 0.35),
+    inset 0 0 20px rgba(185, 100, 255, 0.14) !important;
+}
+
+
+/* ===== RESUME TEXT — SLIGHTLY BOLDER ===== */
+
+.resume-cta-final {
+  font-weight: 600 !important;
+}
+
+
+/* ===== FLOATING TECH CARDS — GLOW EFFECT ===== */
+
+.hero-tech-card,
+.tech-card,
+.floating-tech-card,
+.reference-tech-card {
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease !important;
+
+  border: 1px solid rgba(80, 140, 255, 0.45) !important;
+
+  box-shadow:
+    0 0 8px rgba(70, 130, 255, 0.25),
+    0 0 20px rgba(70, 130, 255, 0.15) !important;
+}
+
+.hero-tech-card:hover,
+.tech-card:hover,
+.floating-tech-card:hover,
+.reference-tech-card:hover {
+  transform: translateY(-4px) scale(1.04) !important;
+
+  border-color: rgba(100, 160, 255, 0.9) !important;
+
+  box-shadow:
+    0 0 10px rgba(70, 140, 255, 0.75),
+    0 0 25px rgba(70, 140, 255, 0.55),
+    0 0 45px rgba(70, 140, 255, 0.30) !important;
+}
+
+
+/* =========================================================
+   SKILLS / TECHNICAL FOUNDATION — LARGER CARDS & TEXT
+   ========================================================= */
+
+.reference-foundation-grid {
+  gap: 24px !important;
+}
+
+.reference-foundation-card {
+  min-height: 155px !important;
+  padding: 32px 30px !important;
+  border-radius: 20px !important;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease !important;
+}
+
+/* Card title */
+.reference-foundation-card h3 {
+  font-size: 24px !important;
+  line-height: 1.25 !important;
+  font-weight: 700 !important;
+  margin-bottom: 18px !important;
+}
+
+/* Card description */
+.reference-foundation-card p {
+  font-size: 17px !important;
+  line-height: 1.5 !important;
+}
+
+/* Hover glow */
+.reference-foundation-card:hover {
+  transform: translateY(-5px) !important;
+
+  border-color: rgba(90, 145, 255, 0.65) !important;
+
+  box-shadow:
+    0 0 12px rgba(70, 130, 255, 0.35),
+    0 0 28px rgba(70, 130, 255, 0.22),
+    0 0 50px rgba(70, 130, 255, 0.12) !important;
+}
+
+/* Larger section heading */
+.reference-foundation h2 {
+  font-size: 56px !important;
+  line-height: 1.05 !important;
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .reference-foundation-card {
+    min-height: 140px !important;
+    padding: 26px 24px !important;
+  }
+
+  .reference-foundation-card h3 {
+    font-size: 22px !important;
+  }
+
+  .reference-foundation-card p {
+    font-size: 16px !important;
+  }
+
+  .reference-foundation h2 {
+    font-size: 40px !important;
+  }
+}
+
+
+/* ===== VIEW ALL SKILLS — LARGER FONT ===== */
+
+.reference-foundation > a {
+  font-size: 17px !important;
+  font-weight: 600 !important;
+}
+
