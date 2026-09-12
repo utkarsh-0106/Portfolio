@@ -17,9 +17,11 @@ const technologies = [
   { name: 'System Design', icon: '◉', className: 'hero-tech-system' },
 ];
 
+
 export function HomePage() {
   return (
-    <main className="reference-home">
+    <>
+      <main className="reference-home">
 
       {/* =====================================================
           HERO
@@ -83,6 +85,15 @@ export function HomePage() {
                   Let&apos;s Connect
                 </Link>
               </div>
+              
+              <a
+                href={profile.resumeUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="reference-button secondary resume-cta-final"
+              >
+                View Resume
+              </a>
             </Reveal>
 
             <Reveal delay={0.28}>
@@ -273,6 +284,7 @@ export function HomePage() {
 
       </section>
 
-    </main>
+      </main>
+    </>
   );
 }
