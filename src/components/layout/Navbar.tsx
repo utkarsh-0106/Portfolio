@@ -42,7 +42,9 @@ export function Navbar() {
         </Link>
 
         <div className="hidden items-center gap-0.5 lg:flex">
-          {navLinks.map((link) => (
+          {navLinks
+            .filter((link) => link.path !== '/certifications')
+            .map((link) => (
             <NavLink
               key={link.path}
               to={link.path}

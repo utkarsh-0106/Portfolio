@@ -9,7 +9,7 @@ export interface ExperienceItem {
 
 export const experiences: ExperienceItem[] = [
   {
-    title: 'Full Stack Web Development Intern',
+    title: 'Software Development Intern',
     org: 'ElevanceSkills',
     period: 'Sep 2026 - Present',
     type: 'Internship',
@@ -30,11 +30,13 @@ export const experiences: ExperienceItem[] = [
     period: 'June 2026 - Aug 2026',
     type: 'Apprenticeship',
     description:
-      'Architected and delivered responsive frontend components and modular backend microservices in an agile environment, focusing on clean code architecture and resilient API design.',
+      'Developed responsive full-stack web applications using the MERN stack, building RESTful APIs, database operations, and frontend-backend integrations.',
     highlights: [
-      'Built responsive UI components and modular Node.js backend services.',
-      'Implemented robust API error-handling logic and input validation middleware to increase system resilience.',
-      'Practiced OOP principles, asynchronous programming patterns, and strict peer code reviews via Git.',
+      'Developed responsive full-stack web applications using MongoDB, Express.js, React.js, and Node.js.',
+      'Built and integrated RESTful APIs for backend business logic and frontend-backend communication.',
+      'Implemented MongoDB CRUD operations and data modeling.',
+      'Applied Object-Oriented Programming, asynchronous programming, input validation, API error handling, debugging, and software testing practices.',
+      'Collaborated using Git, participated in code reviews, and followed Agile software development workflows.',
     ],
   },
   {
@@ -43,61 +45,37 @@ export const experiences: ExperienceItem[] = [
     period: '2025',
     type: 'Hackathon',
     description:
-      'Competed in a national-level hackathon, building a working solution under tight time constraints against teams from across the country.',
+      'Participated in Round 1 of the Adobe India Hackathon 2025, applying programming fundamentals, analytical reasoning, problem-solving, and coding skills.',
     highlights: [
-      'Rapidly prototyped and shipped a feature-complete solution.',
-      'Collaborated under pressure with strict deadlines.',
-      'Gained exposure to real-world product thinking and scope management.',
+      'Participated in the Online MCQ Assessment and Coding assessment.',
+      'Applied problem-solving, programming fundamentals, analytical reasoning, and coding skills during the assessment.',
+      'Represented IMS Engineering College (IMSEC).',
     ],
   },
   {
-    title: 'Flipkart GRiD',
+    title: 'Flipkart GRiD 6.0',
     org: 'Flipkart',
     period: '2024',
     type: 'Hackathon',
     description:
-      'Participated in Flipkart\'s GRiD challenge, solving engineering problems inspired by real e-commerce scale and complexity.',
+      'Participated in Level 1 of Flipkart GRiD 6.0 under the Software Development Track, completing the E-Commerce & Technology Quiz.',
     highlights: [
-      'Tackled problems grounded in real-world systems at scale.',
-      'Sharpened algorithmic and problem-solving speed.',
+      'Participated in the Software Development Track.',
+      'Completed Level 1: E-Commerce & Technology Quiz.',
+      'Applied software development fundamentals, analytical thinking, problem-solving, and knowledge of e-commerce and technology concepts.',
     ],
   },
   {
-    title: 'HackVriksh',
-    org: 'HackVriksh',
+    title: 'TATA Crucible Campus Quiz',
+    org: 'Tata Group',
     period: '2025',
     type: 'Hackathon',
     description:
-      'Built and pitched a project end-to-end at a competitive hackathon, taking it from idea to working demo.',
+      'Participated in the Tata Crucible Campus Quiz 2025 as a representative of IMS Engineering College (IMSEC).',
     highlights: [
-      'Owned the full build — from concept to deployable demo.',
-      'Practiced communicating technical ideas to a judging panel.',
-    ],
-  },
-  {
-    title: 'TATA Crucible',
-    org: 'TATA',
-    period: '2025',
-    type: 'Hackathon',
-    description:
-      'Competed in the TATA Crucible business and tech quiz, testing breadth across technology, business, and current trends.',
-    highlights: [
-      'Developed broad awareness across tech and business domains.',
-      'Sharpened quick-thinking and recall under time pressure.',
-    ],
-  },
-  {
-    title: 'Academic Projects',
-    org: 'Engineering Curriculum',
-    period: '2023 — 2026',
-    type: 'Academic Project',
-    description:
-      'Built a portfolio of academic projects spanning analytics, recommendation systems, and developer tooling — each chosen to stretch a different skill.',
-    highlights: [
-      'Institutional Performance Analytics System (Python, Streamlit).',
-      'AI Developer Toolbox (React, deployed on Vercel).',
-      'CineMatch movie recommendation system (ML, deployed on Render).',
-      'Track-n-Test DSA progress tracker.',
+      'Participated in the Tata Crucible Campus Quiz 2025, organized by the Tata Group.',
+      'Represented IMS Engineering College (IMSEC).',
+      'Demonstrated knowledge of business, technology, current affairs, analytical reasoning, and problem-solving.',
     ],
   },
 ];

@@ -544,3 +544,11 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
 ];
+
+/** Hidden on the Skills page: listed in data, but not evidenced by shipped projects or internships. */
+const unverifiedSkillNames = new Set(['PostgreSQL', 'Docker', 'Maven']);
+
+export const displayedSkillCategories: SkillCategory[] = skillCategories.map((category) => ({
+  ...category,
+  skills: category.skills.filter((skill) => !unverifiedSkillNames.has(skill.name)),
+}));

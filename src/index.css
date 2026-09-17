@@ -4879,3 +4879,10 @@ header svg {
   font-weight: 600 !important;
 }
 
+
+/* Remove unwanted top accent line */
+html,
+body,
+#root {
+  border-top: none !important;
+}
