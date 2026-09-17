@@ -72,7 +72,7 @@ export function AboutPage() {
           <Reveal>
             <div className="glass-panel overflow-hidden p-3">
               <PortraitTreatment
-                src={profile.photo}
+                src="/about-workspace.png"
                 alt="Utkarsh Maheshwari"
                 className="aspect-[4/5]"
               />
@@ -106,6 +106,44 @@ export function AboutPage() {
                   <dd className="mt-1 text-sm">{profile.city}</dd>
                 </div>
               </dl>
+
+              <div className="about-exploring mt-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-500">
+                  Currently Exploring
+                </p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                  <span>Backend Architecture</span>
+                  <span>RAG &amp; LLM Applications</span>
+                  <span>System Design</span>
+                  <span>Problem Solving</span>
+                </div>
+              </div>
+
+              <div className="about-approach mt-7">
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-accent-500">
+                  Engineering Approach
+                </p>
+
+                <div className="about-approach-grid mt-3">
+                  <div>
+                    <strong>01</strong>
+                    <h3>Design deliberately</h3>
+                    <p>Clear APIs, data models, and maintainable structure.</p>
+                  </div>
+
+                  <div>
+                    <strong>02</strong>
+                    <h3>Build with evidence</h3>
+                    <p>Testing, validation, and measurable system behavior.</p>
+                  </div>
+
+                  <div>
+                    <strong>03</strong>
+                    <h3>Ship end-to-end</h3>
+                    <p>From backend logic to usable interfaces and deployment.</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
