@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { PageShell } from '@/components/layout/PageShell';
 import { ProjectCover } from '@/components/media/ProjectCover';
+import { ProjectVideo } from '@/components/media/ProjectVideo';
 import { Pipeline } from '@/components/projects/Pipeline';
 import { getProject } from '@/data/projects';
 import { findSections, jangoPipeline, projectDisplay } from '@/lib/projectView';
@@ -87,6 +88,15 @@ export function ProjectDetailPage() {
                   {link.label}
                 </Button>
               ))}
+              {project.video && (
+                <Button
+                  href="#project-demo"
+                  variant="secondary"
+                >
+                  <PlayCircle size={16} />
+                  Watch Demo
+                </Button>
+              )}
             </div>
           </Reveal>
           <Reveal delay={0.16}>
@@ -105,6 +115,31 @@ export function ProjectDetailPage() {
             </div>
           </div>
         </Reveal>
+
+        {project.video && (
+          <Reveal delay={0.12}>
+            <section id="project-demo" className="mt-8 scroll-mt-24">
+              <div className="mb-4 flex items-center justify-between">
+                <div>
+                  <p className="font-mono text-xs uppercase tracking-[0.2em] text-subtle">
+                    Project Demo
+                  </p>
+                  <h2 className="mt-1 font-display text-xl font-semibold tracking-tight">
+                    Watch the build in action
+                  </h2>
+                </div>
+                <span className="font-mono text-xs text-subtle">
+                  20 sec
+                </span>
+              </div>
+
+              <ProjectVideo
+                src={project.video}
+                title={`${display.name} project demo`}
+              />
+            </section>
+          </Reveal>
+        )}
 
         <div className="mt-14 grid gap-10 lg:grid-cols-3">
           <div className="space-y-12 lg:col-span-2">

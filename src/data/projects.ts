@@ -21,12 +21,14 @@ export interface Project {
   cover: string;
   sections: ProjectSection[];
   gallery: string[];
+  video?: string;
 }
 
 export const projects: Project[] = [
   {
     slug: "jango",
     title: "Jango",
+    video: "/videos/jango.mp4",
     tagline:
       "A private enterprise document assistant powered by Retrieval-Augmented Generation.",
     summary:
@@ -117,6 +119,7 @@ export const projects: Project[] = [
   {
     slug: "ai-developer-toolbox",
     title: "AI Developer Toolbox",
+    video: "/videos/ai-developer-toolbox.mp4",
     tagline:
       "An AI-powered productivity platform that brings essential developer tools into one workspace.",
     summary:
@@ -234,6 +237,7 @@ export const projects: Project[] = [
   {
     slug: "institutional-performance-analytics-system",
     title: "Institutional Performance Analytics System",
+    video: "/videos/institutional-performance-analytics.mp4",
     tagline:
       "A data-driven analytics platform for measuring institutional performance across departments.",
     summary:
