@@ -249,7 +249,7 @@ export const projects: Project[] = [
       "Scikit-learn",
       "Data Visualization",
     ],
-    year: "2024",
+    year: "2026",
     role: "Solo Developer",
     links: [
       {
