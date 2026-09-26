@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Reveal } from '@/components/Reveal';
+import AskAIRobot from '@/components/AskAIRobot';
 import { profile } from '@/data/profile';
 
 const technologies = [
@@ -26,7 +27,8 @@ export function HomePage() {
       {/* =====================================================
           HERO
       ====================================================== */}
-      <section className="reference-hero">
+      <section className="reference-hero relative">
+        <AskAIRobot />
 
         <div className="reference-hero-grid" />
         <div className="reference-glow reference-glow-one" />

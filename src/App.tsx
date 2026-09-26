@@ -11,6 +11,7 @@ const ProjectDetailPage = lazy(() => import('@/pages/ProjectDetailPage').then((m
 const ExperiencePage = lazy(() => import('@/pages/ExperiencePage').then((m) => ({ default: m.ExperiencePage })));
 const CertificationsPage = lazy(() => import('@/pages/CertificationsPage').then((m) => ({ default: m.CertificationsPage })));
 const ContactPage = lazy(() => import('@/pages/ContactPage').then((m) => ({ default: m.ContactPage })));
+const AskPortfolioPage = lazy(() => import('@/pages/AskPortfolioPage').then((m) => ({ default: m.default })));
 const NotFoundPage = lazy(() => import('@/pages/NotFoundPage').then((m) => ({ default: m.NotFoundPage })));
 
 function Loading() {
@@ -36,6 +37,7 @@ export default function App() {
             <Route path="/experience" element={<ExperiencePage />} />
             <Route path="/certifications" element={<CertificationsPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="/ask" element={<AskPortfolioPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
