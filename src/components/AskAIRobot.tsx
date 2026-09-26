@@ -1,65 +1,251 @@
-import { motion } from 'framer-motion';
-import { Bot, Sparkles, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function AskAIRobot() {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8, y: 20 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
-      transition={{ duration: 0.7, delay: 0.4, ease: 'easeOut' }}
-      className="fixed bottom-7 right-7 z-[9999]"
+    <Link
+      to="/ask"
+      aria-label="Ask AI about Utkarsh's work"
+      className="group absolute right-[2%] top-[9%] z-30 hidden md:block"
     >
-      <Link
-        to="/ask"
-        aria-label="Ask AI about Utkarsh's work"
-        className="group block"
-      >
-        <motion.div
-          animate={{ y: [0, -7, 0] }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-          className="relative"
+      <div className="relative flex flex-col items-center">
+        {/* Speech bubble */}
+        <div
+          className="
+            absolute -left-44 -top-2 w-48
+            rounded-2xl border border-blue-300/50
+            bg-white px-4 py-3
+            text-slate-900
+            shadow-[0_0_30px_rgba(59,130,246,0.28)]
+            transition-all duration-300
+            group-hover:-translate-y-1
+            group-hover:shadow-[0_0_42px_rgba(59,130,246,0.42)]
+          "
         >
-          {/* Speech bubble */}
-          <div className="absolute -top-16 right-0 w-52 rounded-2xl border border-blue-400/20 bg-[#0b1020]/95 px-4 py-3 shadow-2xl shadow-blue-500/10 backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-blue-400/40">
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wide text-blue-300">
-              <Sparkles className="h-3.5 w-3.5" />
-              ASK AI
-            </div>
-            <p className="mt-1 text-xs leading-5 text-white/70">
-              Ask me anything about my work.
-            </p>
-
-            <div className="absolute -bottom-2 right-7 h-4 w-4 rotate-45 border-b border-r border-blue-400/20 bg-[#0b1020]" />
-          </div>
-
-          {/* Robot */}
-          <div className="relative flex h-20 w-20 items-center justify-center rounded-[24px] border border-blue-400/30 bg-gradient-to-br from-[#18264d] via-[#111a35] to-[#090d1b] shadow-[0_12px_45px_rgba(37,99,235,0.28)] transition-all duration-300 group-hover:scale-105 group-hover:border-blue-400/60 group-hover:shadow-[0_15px_55px_rgba(37,99,235,0.4)]">
-            {/* antenna */}
-            <div className="absolute -top-4 left-1/2 h-4 w-px -translate-x-1/2 bg-blue-400/60" />
-            <div className="absolute -top-5 left-1/2 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-blue-400 shadow-[0_0_14px_rgba(96,165,250,0.9)]" />
-
-            <div className="relative flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
-              <Bot className="h-8 w-8 text-blue-300" strokeWidth={1.6} />
-
-              <span className="absolute right-1.5 top-1.5 h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.9)]" />
-            </div>
-
-            {/* subtle glow */}
-            <div className="pointer-events-none absolute inset-0 rounded-[24px] bg-blue-500/10 blur-xl" />
-          </div>
-
-          {/* Label */}
-          <div className="mt-2 flex items-center justify-center gap-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-white/60 transition-colors group-hover:text-blue-300">
+          <p className="text-base font-bold tracking-tight text-blue-600">
             Ask AI
-            <ArrowUpRight className="h-3 w-3" />
-          </div>
-        </motion.div>
-      </Link>
-    </motion.div>
+          </p>
+
+          <p className="mt-1 text-xs leading-4 text-slate-700">
+            Ask me anything about my work!
+          </p>
+
+          {/* Speech bubble pointer */}
+          <span
+            className="
+              absolute -right-2 top-7
+              h-4 w-4 rotate-45
+              border-r border-t border-blue-300/50
+              bg-white
+            "
+          />
+        </div>
+
+        {/* Robot */}
+        <div
+          className="
+            animate-[ask-ai-float_3.5s_ease-in-out_infinite]
+            transition-transform duration-300
+            group-hover:scale-105
+          "
+        >
+          <svg
+            width="128"
+            height="128"
+            viewBox="0 0 128 128"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            {/* Glow */}
+            <circle
+              cx="64"
+              cy="64"
+              r="48"
+              fill="rgba(59,130,246,0.10)"
+            />
+
+            {/* Antenna */}
+            <path
+              d="M64 24V15"
+              stroke="#60A5FA"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            <circle
+              cx="64"
+              cy="12"
+              r="5"
+              fill="#38BDF8"
+              stroke="#BFDBFE"
+              strokeWidth="2"
+            />
+
+            {/* Head */}
+            <rect
+              x="28"
+              y="25"
+              width="72"
+              height="58"
+              rx="22"
+              fill="#EAF2FF"
+              stroke="#60A5FA"
+              strokeWidth="3"
+            />
+
+            {/* Face */}
+            <rect
+              x="37"
+              y="35"
+              width="54"
+              height="34"
+              rx="14"
+              fill="#07111F"
+            />
+
+            {/* Eyes */}
+            <circle cx="51" cy="52" r="5" fill="#60A5FA" />
+            <circle cx="77" cy="52" r="5" fill="#60A5FA" />
+
+            {/* Smile */}
+            <path
+              d="M55 59C59 63 69 63 73 59"
+              stroke="#38BDF8"
+              strokeWidth="3"
+              strokeLinecap="round"
+            />
+
+            {/* Side ears */}
+            <rect
+              x="22"
+              y="43"
+              width="8"
+              height="18"
+              rx="4"
+              fill="#93C5FD"
+            />
+
+            <rect
+              x="98"
+              y="43"
+              width="8"
+              height="18"
+              rx="4"
+              fill="#93C5FD"
+            />
+
+            {/* Body — outfit inspired by Utkarsh */}
+            <path
+              d="M42 84C37 86 32 91 29 98L38 103L44 96V108H84V96L90 103L99 98C96 91 91 86 86 84L78 81H50L42 84Z"
+              fill="#7A3F2A"
+              stroke="#A86545"
+              strokeWidth="3"
+            />
+
+            {/* White T-shirt */}
+            <path
+              d="M51 82L57 87H71L77 82L73 78H55L51 82Z"
+              fill="#F8FAFC"
+              stroke="#E2E8F0"
+              strokeWidth="2"
+            />
+
+            {/* Overshirt center opening */}
+            <path
+              d="M64 88V108"
+              stroke="#5B2D20"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+
+            {/* Shirt buttons */}
+            <circle cx="64" cy="94" r="1.8" fill="#E7B08F" />
+            <circle cx="64" cy="101" r="1.8" fill="#E7B08F" />
+
+            {/* Left sleeve */}
+            <path
+              d="M43 85C37 87 33 92 31 98"
+              stroke="#7A3F2A"
+              strokeWidth="9"
+              strokeLinecap="round"
+            />
+
+            {/* Right sleeve */}
+            <path
+              d="M85 85C91 87 96 82 101 73"
+              stroke="#7A3F2A"
+              strokeWidth="9"
+              strokeLinecap="round"
+            />
+
+            {/* Small cuff details */}
+            <path
+              d="M30 98L36 101"
+              stroke="#A86545"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+            <path
+              d="M98 76L103 70"
+              stroke="#A86545"
+              strokeWidth="2"
+              strokeLinecap="round"
+            />
+
+            {/* Robot hands */}
+            <circle cx="29" cy="101" r="4" fill="#93C5FD" />
+            <circle cx="104" cy="68" r="4" fill="#93C5FD" />
+
+
+            {/* Chest light */}
+            <circle
+              cx="64"
+              cy="96"
+              r="5"
+              fill="#38BDF8"
+            />
+
+            {/* Left arm */}
+            <path
+              d="M43 88C34 88 30 94 29 101"
+              stroke="#93C5FD"
+              strokeWidth="7"
+              strokeLinecap="round"
+            />
+
+            {/* Right arm / pointing gesture */}
+            <path
+              d="M85 88C94 84 99 77 103 70"
+              stroke="#93C5FD"
+              strokeWidth="7"
+              strokeLinecap="round"
+            />
+
+            <circle
+              cx="104"
+              cy="68"
+              r="4"
+              fill="#38BDF8"
+            />
+          </svg>
+        </div>
+
+        {/* Small "Ask AI" indicator */}
+        <div
+          className="
+            -mt-2 rounded-full
+            border border-blue-400/40
+            bg-slate-950/90
+            px-3 py-1
+            text-[10px] font-medium tracking-[0.18em]
+            text-blue-300
+            opacity-90
+            shadow-[0_0_18px_rgba(59,130,246,0.18)]
+          "
+        >
+          ASK AI
+        </div>
+      </div>
+    </Link>
   );
 }
