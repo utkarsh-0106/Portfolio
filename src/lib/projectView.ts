@@ -1,4 +1,4 @@
-import type { Project } from '@/data/projects';
+import type { Project } from '../data/projects';
 
 const displayTitles: Record<string, { name: string; subtitle?: string }> = {
   jango: { name: 'JANGO', subtitle: 'Enterprise Document Intelligence Platform' },
