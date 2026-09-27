@@ -2,6 +2,7 @@ import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { PageTransition } from '@/components/layout/PageTransition';
 import { ScrollToHash } from '@/components/layout/ScrollToHash';
+import AskAIRobot from '@/components/AskAIRobot';
 import { HomePage } from '@/pages/HomePage';
 
 const AboutPage = lazy(() => import('@/pages/AboutPage').then((m) => ({ default: m.AboutPage })));
@@ -42,6 +43,8 @@ export default function App() {
           </Routes>
         </Suspense>
       </PageTransition>
+
+      <AskAIRobot />
     </>
   );
 }

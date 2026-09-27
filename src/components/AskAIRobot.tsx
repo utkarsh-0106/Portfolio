@@ -5,7 +5,7 @@ export default function AskAIRobot() {
     <Link
       to="/ask"
       aria-label="Ask AI about Utkarsh's work"
-      className="group absolute right-[2%] top-[9%] z-30 hidden md:block"
+      className="group fixed bottom-6 right-6 z-50 hidden md:block"
     >
       <div className="relative flex flex-col items-center">
         {/* Speech bubble */}
