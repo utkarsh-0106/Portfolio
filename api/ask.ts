@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { retrieveAssistantContext } from '../src/lib/assistantRetrieval';
+import { retrieveAssistantContext } from '../src/lib/assistantRetrieval.js';
 
 export default async function handler(
   req: VercelRequest,

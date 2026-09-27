@@ -10,12 +10,12 @@
  * 3. Imports are deliberately RELATIVE, not `@/` aliased, because this module is
  *    compiled into the serverless function at /api/ask as well as the browser bundle.
  */
-import { profile } from './profile';
-import { projects, type Project } from './projects';
-import { displayedSkillCategories } from './skills';
-import { experiences } from './experience';
-import { certifications } from './certifications';
-import { jangoPipeline, orderedProjects, projectDisplay } from '../lib/projectView';
+import { profile } from './profile.js';
+import { projects, type Project } from './projects.js';
+import { displayedSkillCategories } from './skills.js';
+import { experiences } from './experience.js';
+import { certifications } from './certifications.js';
+import { jangoPipeline, orderedProjects, projectDisplay } from '../lib/projectView.js';
 
 export interface AssistantSource {
   id: string;

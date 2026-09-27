@@ -15,7 +15,7 @@ import {
   assistantSections,
   type AssistantProject,
   type AssistantSource,
-} from '../data/portfolioAssistant';
+} from '../data/portfolioAssistant.js';
 
 export interface RetrievedChunk {
   id: string;
