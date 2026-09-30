@@ -51,6 +51,12 @@ export interface AssistantProject {
 /* -------------------------------------------------------------------------- */
 
 const projectGaps: Record<string, string[]> = {
+  'jango-job-agent': [
+    'No live web application or hosted extension deployment is documented.',
+    'No user count, usage volume, performance benchmark, or adoption metric is documented.',
+    'No AI or machine-learning model is used by the current MVP; field classification is deterministic and confidence-based.',
+    'No backend service or remote database is documented; the current architecture uses browser-local storage.',
+  ],
   jango: [
     'No automated test count, coverage figure, or test framework is documented for this project.',
     'No user count, latency, throughput, or production traffic claim is documented.',

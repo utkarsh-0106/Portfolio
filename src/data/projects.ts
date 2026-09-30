@@ -493,6 +493,106 @@ export const projects: Project[] = [
       "/tnt3.png",
     ],
   },
+
+  {
+    slug: "jango-job-agent",
+    title: "Jango Job Agent",
+    tagline:
+      "A privacy-focused Chromium extension that detects job application fields and automatically fills supported fields using a structured user profile.",
+    summary:
+      "A local-first browser extension that analyzes job application forms, classifies supported fields with confidence-based detection, and deterministically autofills matching information while keeping final submission under user control.",
+    tags: [
+      "TypeScript",
+      "React",
+      "Chrome Manifest V3",
+      "Vite",
+      "Vitest",
+      "DOM APIs",
+      "Chrome Storage API",
+    ],
+    year: "2026",
+    role: "Extension Developer",
+    links: [
+      {
+        label: "GitHub",
+        url: "https://github.com/utkarsh-0106/jango-job-agent",
+        type: "github",
+      },
+      {
+        label: "Demo Video",
+        url: "https://www.youtube.com/watch?v=8iNf6f4ubqk",
+        type: "video",
+      },
+    ],
+    cover: "/jango-job-agent.jpg",
+    sections: [
+      {
+        heading: "Problem",
+        body: [
+          "Job applications repeatedly ask users to enter the same personal, contact, education, and professional information across different forms.",
+          "Manually entering this information is repetitive and time-consuming, especially when different forms use different field names and structures.",
+        ],
+      },
+      {
+        heading: "Architecture",
+        body: [
+          "Jango Job Agent is built as a Chromium-compatible Manifest V3 extension with a React and TypeScript popup UI and browser DOM interaction layers.",
+          "The extension analyzes the current webpage's form fields, classifies supported fields using confidence-based detection, maps them to a structured user profile, and deterministically fills matching fields.",
+          "Google Forms compatibility is implemented by extracting question context from its dynamic DOM structure while keeping final application submission under user control.",
+        ],
+      },
+      {
+        heading: "Tech Stack",
+        body: [
+          "Frontend: React and TypeScript.",
+          "Extension platform: Chrome Manifest V3 and Chromium browser APIs.",
+          "Build and tooling: Vite and Vitest.",
+          "Browser interaction: JavaScript DOM APIs.",
+          "Local storage: Chrome Storage API.",
+        ],
+      },
+      {
+        heading: "Features",
+        body: [
+          "Confidence-based job application field detection and classification.",
+          "Deterministic profile-driven autofill.",
+          "Google Forms question detection and autofill compatibility.",
+          "Structured profile management for personal, contact, education, and professional information.",
+          "Chromium-compatible Manifest V3 architecture with automated testing and user-controlled submission.",
+        ],
+      },
+      {
+        heading: "Engineering Decisions",
+        body: [
+          "The MVP uses deterministic confidence-based field classification instead of an AI or machine-learning model.",
+          "Keeping detection and autofill deterministic makes the behavior predictable and avoids unsupported guesses about user information.",
+          "The extension performs its core detection and autofill locally in the browser without requiring a backend service.",
+        ],
+      },
+      {
+        heading: "Privacy",
+        body: [
+          "The project follows a local-first architecture. User profile information is stored using Chrome's local storage and the core autofill workflow does not depend on a remote backend.",
+          "Final application submission remains under the user's control rather than being automatically submitted by the extension.",
+        ],
+      },
+      {
+        heading: "Verification",
+        body: [
+          "The extension was verified in both Google Chrome and Brave.",
+          "Automated tests cover the core extension workflows, including field detection and autofill behavior.",
+        ],
+      },
+      {
+        heading: "Learning",
+        body: [
+          "Building Jango Job Agent provided practical experience with browser extension architecture, Manifest V3, DOM-based form interaction, confidence-based classification, browser storage, automated testing, and cross-browser verification.",
+        ],
+      },
+    ],
+    gallery: [],
+  },
+
 ];
 
 export function getProject(slug: string): Project | undefined {

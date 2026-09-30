@@ -2,6 +2,7 @@ import type { Project } from '../data/projects.js';
 
 const displayTitles: Record<string, { name: string; subtitle?: string }> = {
   jango: { name: 'JANGO', subtitle: 'Enterprise Document Intelligence Platform' },
+  'jango-job-agent': { name: 'Jango Job Agent', subtitle: 'Privacy-focused Job Application Autofill Extension' },
   'institutional-performance-analytics-system': {
     name: 'Institutional Performance Analytics System',
   },
@@ -12,6 +13,7 @@ const displayTitles: Record<string, { name: string; subtitle?: string }> = {
 
 export const projectOrder = [
   'jango',
+  'jango-job-agent',
   'institutional-performance-analytics-system',
   'ai-developer-toolbox',
   'cinematch',

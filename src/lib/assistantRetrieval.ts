@@ -270,7 +270,14 @@ function scoreDocument(
 
 export function isOutOfScopeQuestion(question: string): boolean {
   const normalized = question.toLowerCase();
-  return OUT_OF_SCOPE_PATTERNS.some((pattern) => normalized.includes(pattern));
+
+  return OUT_OF_SCOPE_PATTERNS.some((pattern) => {
+    if (pattern.includes(' ')) {
+      return normalized.includes(pattern);
+    }
+
+    return new RegExp(`\\b${pattern}\\b`).test(normalized);
+  });
 }
 
 /**
@@ -413,6 +420,33 @@ function buildProjectListResult(): RetrievalResult {
   };
 }
 
+function buildProjectResult(slug: string): RetrievalResult {
+  const project = assistantProjects.find((item) => item.slug === slug);
+
+  if (!project) {
+    return {
+      chunks: [],
+      sources: [],
+      grounded: false,
+    };
+  }
+
+  const documents = projectDocuments(project);
+  const chunks: RetrievedChunk[] = documents.slice(0, 3).map((document, index) => ({
+    id: document.id,
+    sourceId: document.sourceId,
+    title: document.title,
+    text: document.body.trim(),
+    score: 10 - index,
+  }));
+
+  return {
+    chunks,
+    sources: [project.source],
+    grounded: chunks.length > 0,
+  };
+}
+
 function buildExperienceResult(): RetrievalResult {
   const section = assistantSections.find(
     (item) => item.source.id === 'experience'
@@ -454,6 +488,14 @@ export function retrieveAssistantContext(question: string): RetrievalResult {
     return buildExperienceResult();
   }
 
+  if (
+    /\b(jango job agent|job agent|job autofill|job application autofill|autofill extension|google forms autofill)\b/i.test(
+      question
+    )
+  ) {
+    return buildProjectResult('jango-job-agent');
+  }
+
   const queryTokens = Array.from(new Set(tokenize(question)));
 
   if (queryTokens.length === 0) return empty;
@@ -481,6 +523,12 @@ export function retrieveAssistantContext(question: string): RetrievalResult {
         .filter((document) => document.sourceId.startsWith('project:'))
         .map((document) => document.sourceId)
     );
+  } else if (
+    /\b(jango job agent|job agent|job autofill|job application autofill|autofill extension|google forms autofill)\b/.test(
+      normalizedQuestion
+    )
+  ) {
+    allowedSourceIds = new Set(['project:jango-job-agent']);
   } else if (
     /\b(jango|enterprise document|document intelligence|rag project)\b/.test(
       normalizedQuestion
