@@ -11,7 +11,7 @@ export const experiences: ExperienceItem[] = [
   {
     title: 'Software Development Intern',
     org: 'ElevanceSkills',
-    period: 'Sep 2026 - Present',
+    period: 'Sep 2026',
     type: 'Internship',
     description:
       'Working on a full stack web application, implementing backend APIs, authentication, social features, and security-focused functionality.',
