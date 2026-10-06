@@ -14,7 +14,7 @@ interface BaseProps {
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-accent-500 text-white hover:bg-accent-400 shadow-[0_0_0_1px_rgba(78,161,255,0.28),0_12px_28px_rgba(78,161,255,0.14)]',
+    'bg-accent-500 text-white hover:bg-accent-400 shadow-[0_0_0_1px_var(--border-accent),0_12px_28px_rgba(var(--accent-rgb),0.14)]',
   secondary:
     'bg-card text-[var(--text)] border border-soft hover:border-strong backdrop-blur-xl',
   ghost: 'text-muted hover:text-[var(--text)]',

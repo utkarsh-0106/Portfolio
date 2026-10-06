@@ -8,7 +8,7 @@ export function AmbientBackground() {
       <div className="absolute right-[18%] top-24 hidden h-40 w-40 motion-safe:animate-orbit md:block">
         <span className="absolute left-1/2 top-0 h-1.5 w-1.5 rounded-full bg-accent-500/70" />
       </div>
-      <div className="absolute left-[12%] top-[42%] hidden h-1 w-1 rounded-full bg-violet-500/50 motion-safe:animate-float md:block" />
+      <div className="absolute left-[12%] top-[42%] hidden h-1 w-1 rounded-full bg-accent-2/50 motion-safe:animate-float md:block" />
     </div>
   );
 }

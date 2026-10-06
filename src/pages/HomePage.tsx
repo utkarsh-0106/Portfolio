@@ -31,201 +31,137 @@ export function HomePage() {
       <main className="reference-home">
 
       {/* =====================================================
-          HERO
+          CINEMATIC HERO
       ====================================================== */}
-      <section className="reference-hero relative">
+      <section className="cinematic-hero">
+        <div className="cinematic-hero-backdrop" aria-hidden="true" />
+        <div className="cinematic-hero-grid" aria-hidden="true" />
+        <div className="cinematic-hero-glow cinematic-hero-glow-left" aria-hidden="true" />
+        <div className="cinematic-hero-glow cinematic-hero-glow-right" aria-hidden="true" />
 
-        <div className="reference-hero-grid" />
-        <div className="reference-glow reference-glow-one" />
-        <div className="reference-glow reference-glow-two" />
-
-        <div className="reference-hero-content">
-
-          {/* =================================================
-              LEFT — TEXT CONTENT
-          ================================================== */}
-          <div className="reference-copy">
-
+        <div className="cinematic-hero-inner">
+          <div className="cinematic-copy">
             <Reveal>
-              <div className="reference-eyebrow">
-                <span className="reference-eyebrow-dot" />
-                <span>CSE UNDERGRAD | CLASS OF 2027</span>
-                <span className="hidden sm:inline text-subtle">•</span>
-                <span className="text-accent-500">OPEN TO ENGINEERING ROLES</span>
+              <div className="cinematic-eyebrow">
+                <span className="cinematic-eyebrow-dot" />
+                <span>CSE UNDERGRAD</span>
+                <span className="cinematic-separator">|</span>
+                <span>CLASS OF 2027</span>
+                <span className="cinematic-separator">|</span>
+                <span className="cinematic-eyebrow-accent">OPEN TO ENGINEERING ROLES</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.08}>
-              <h1 className="reference-title">
+              <h1 className="cinematic-title">
                 <span>Backend</span>
-                <span className="reference-title-accent">
-                  Systems.
-                </span>
-                <span>Practical AI.</span>
-                <span className="reference-title-gradient">
-                  Built End-to-End.
-                </span>
+                <span>Systems.</span>
+                <span className="cinematic-title-gold">Practical AI.</span>
+                <span>Built End-to-End.</span>
               </h1>
             </Reveal>
 
-            <Reveal delay={0.16}>
-              <p className="reference-description">
-                I&apos;m Utkarsh Maheshwari, a Computer Science undergraduate
-                focused on backend engineering and AI. I build reliable APIs,
-                data-driven systems, and AI-powered applications using Python,
-                C++, JavaScript, and modern backend technologies.
+            <Reveal delay={0.15}>
+              <p className="cinematic-description">
+                I&apos;m Utkarsh Maheshwari, a Computer Science undergraduate focused on
+                backend engineering and AI. I build reliable APIs, data-driven systems,
+                and AI-powered applications using Python, C++, JavaScript, and modern backend technologies.
               </p>
             </Reveal>
 
-            <Reveal delay={0.22}>
-              <div className="reference-actions">
-                <Link
-                  to="/projects"
-                  className="reference-button primary"
-                >
-                  Explore Projects
-                  <ArrowRight size={20} />
+            <Reveal delay={0.21}>
+              <div className="cinematic-actions">
+                <Link to="/projects" className="cinematic-button cinematic-button-primary">
+                  Explore Projects <ArrowRight size={17} />
                 </Link>
-
-                <Link
-                  to="/contact"
-                  className="reference-button secondary"
-                >
+                <Link to="/contact" className="cinematic-button cinematic-button-secondary">
                   Let&apos;s Connect
                 </Link>
               </div>
-
-              <a
-                href={profile.resumeUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="reference-button secondary resume-cta-final"
-              >
-                View Resume
-              </a>
             </Reveal>
 
-            <Reveal delay={0.28}>
-              <div className="reference-stats">
-                {profile.heroStats.map((stat, index) => (
-                  <div
-                    className="reference-stat"
-                    key={stat.label}
-                  >
+            <Reveal delay={0.27}>
+              <div className="cinematic-stats">
+                {profile.heroStats.slice(0, 4).map((stat, index) => (
+                  <div className="cinematic-stat" key={stat.label}>
+                    <span className="cinematic-stat-icon">
+                      {['⌘', '▣', '✦', '★'][index]}
+                    </span>
                     <strong>{stat.value}</strong>
                     <span>{stat.label}</span>
-
-                    {index < profile.heroStats.length - 1 && (
-                      <span className="reference-stat-divider" />
-                    )}
                   </div>
                 ))}
               </div>
             </Reveal>
 
-            <Reveal delay={0.34}>
-              <div className="reference-social">
+            <Reveal delay={0.33}>
+              <div className="cinematic-social-row">
                 <span>Connect with me</span>
-
-                <div className="reference-social-links">
-
-                  <a
-                    href={profile.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="GitHub"
-                  >
-                    <Github size={24} />
-                  </a>
-
-                  <a
-                    href={profile.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin size={24} />
-                  </a>
-
-                  <a
-                    href={profile.leetcode}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="LeetCode"
-                    className="leetcode-link"
-                  >
-                    LC
-                  </a>
-
-                  <a
-                    href={`mailto:${profile.email}`}
-                    aria-label="Email"
-                  >
-                    <Mail size={24} />
-                  </a>
-
+                <div className="cinematic-social-links">
+                  <a href={profile.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github size={17} /></a>
+                  <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin size={17} /></a>
+                  <a href={profile.leetcode} target="_blank" rel="noopener noreferrer" aria-label="LeetCode" className="cinematic-lc">LC</a>
+                  <a href={`mailto:${profile.email}`} aria-label="Email"><Mail size={17} /></a>
                 </div>
               </div>
             </Reveal>
-
           </div>
 
-
-          {/* =================================================
-              RIGHT — HERO WORKSPACE
-          ================================================== */}
-          <div className="reference-art">
-
-            <div className="reference-art-frame">
-
+          <div className="cinematic-visual">
+            <div className="cinematic-orbit cinematic-orbit-one" aria-hidden="true" />
+            <div className="cinematic-orbit cinematic-orbit-two" aria-hidden="true" />
+            <div className="cinematic-image-wrap">
               <img
-                src="/hero-workspace.png"
-                alt="Illustrated developer workspace representing Utkarsh Maheshwari"
-                className="reference-art-image"
+                src="/hero-cinematic.png"
+                alt="Utkarsh Maheshwari working with a futuristic AI assistant in a cinematic engineering workspace"
+                className="cinematic-image"
               />
-
+              <div className="cinematic-image-vignette" aria-hidden="true" />
             </div>
 
-
-            {/* Floating technology cards */}
-            <div className="reference-tech-stack">
-
-              {technologies.map((technology) => (
-                <div
-                  key={technology.name}
-                  className={`reference-tech-card ${technology.className}`}
-                >
-                  <span className="reference-tech-icon">
-                    {technology.icon}
-                  </span>
-
-                  <span>{technology.name}</span>
+            <div className="cinematic-tech-stack" aria-label="Technology stack">
+              {technologies.slice(0, 5).map((technology, index) => (
+                <div key={technology.name} className={`cinematic-tech cinematic-tech-${index + 1}`}>
+                  <span>{technology.icon}</span>
+                  <strong>{technology.name}</strong>
                 </div>
               ))}
-
             </div>
 
-
-            {/* Quote */}
-            <div className="reference-quote">
-              <span>“A better tomorrow,</span>
-              <span>built with code.”</span>
-              <small>— Utkarsh Maheshwari</small>
-            </div>
 
           </div>
-
         </div>
 
+        <div className="cinematic-hero-bottom">
+          <div className="cinematic-scroll-hint">
+            <span className="cinematic-scroll-icon">↓</span>
+            <span>SCROLL TO EXPLORE</span>
+          </div>
 
-        {/* Scroll indicator */}
-        <div className="reference-scroll">
-          <span>Scroll to explore</span>
-          <span className="reference-scroll-arrow">↓</span>
+          <div className="cinematic-feature-grid">
+            <Link to="/skills" className="cinematic-feature-card">
+              <span className="cinematic-feature-icon">⌁</span>
+              <span><strong>Backend Systems</strong><small>Scalable APIs, databases and system design.</small></span>
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/ask" className="cinematic-feature-card">
+              <span className="cinematic-feature-icon">✦</span>
+              <span><strong>AI Applications</strong><small>LLMs, RAG, and data-driven intelligence.</small></span>
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/projects" className="cinematic-feature-card">
+              <span className="cinematic-feature-icon">◇</span>
+              <span><strong>End-to-End Projects</strong><small>From idea to deployment.</small></span>
+              <ArrowRight size={16} />
+            </Link>
+            <Link to="/build-log" className="cinematic-feature-card">
+              <span className="cinematic-feature-icon">↗</span>
+              <span><strong>Continuous Learning</strong><small>Consistent build log and documentation.</small></span>
+              <ArrowRight size={16} />
+            </Link>
+          </div>
         </div>
-
       </section>
-
 
       {/* =====================================================
           TECHNICAL FOUNDATION

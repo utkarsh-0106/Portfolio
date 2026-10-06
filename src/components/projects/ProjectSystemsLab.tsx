@@ -29,7 +29,7 @@ function JangoArchitecture() {
       <div className="relative">
         <div className="mb-6 flex items-center justify-between">
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/45">Jango / retrieval pipeline</span>
-          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-[#F97316]"><Radio size={11} /> live view</span>
+          <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.15em] text-[var(--accent-2)]"><Radio size={11} /> live view</span>
         </div>
         <div className="grid gap-2 sm:grid-cols-4">
           {jangoPipeline.map((step, index) => (
@@ -41,14 +41,14 @@ function JangoArchitecture() {
               transition={{ delay: index * 0.06, duration: 0.4 }}
               className="relative"
             >
-              <div className="min-h-[76px] rounded-xl border border-white/10 bg-white/[0.025] p-3 transition-colors hover:border-[#A855F7]/40 hover:bg-[#A855F7]/[0.05]">
-                <div className="font-mono text-[9px] text-[#A855F7]">{String(index + 1).padStart(2, '0')}</div>
+              <div className="min-h-[76px] rounded-xl border border-white/10 bg-white/[0.025] p-3 transition-colors hover:border-[var(--accent)]/40 hover:bg-[var(--accent)]/[0.05]">
+                <div className="font-mono text-[9px] text-[var(--accent)]">{String(index + 1).padStart(2, '0')}</div>
                 <div className="mt-2 text-xs font-medium text-white/85">{step}</div>
               </div>
               {index < jangoPipeline.length - 1 && (
                 <motion.div
                   aria-hidden
-                  className="absolute -right-2 top-1/2 z-10 hidden h-px w-4 bg-[#A855F7]/40 sm:block"
+                  className="absolute -right-2 top-1/2 z-10 hidden h-px w-4 bg-[var(--accent)]/40 sm:block"
                   initial={{ scaleX: 0, transformOrigin: 'left' }}
                   whileInView={{ scaleX: 1 }}
                   viewport={{ once: true }}
@@ -91,14 +91,14 @@ function JobAgentDemo() {
             <div className="flex items-center gap-2">
               <div className="h-1.5 w-12 overflow-hidden rounded-full bg-black/10">
                 <motion.div
-                  className="h-full rounded-full bg-[#F97316]"
+                  className="h-full rounded-full bg-[var(--accent-2)]"
                   initial={{ width: 0 }}
                   whileInView={{ width: index === 3 ? '88%' : '100%' }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.12 + 0.15, duration: 0.5 }}
                 />
               </div>
-              <Check size={13} className="text-[#F97316]" />
+              <Check size={13} className="text-[var(--accent-2)]" />
             </div>
           </motion.div>
         ))}
@@ -133,7 +133,7 @@ function SystemVisual({ project }: { project: Project }) {
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-black/5" />
       <div className="absolute left-4 right-4 top-4 flex items-center justify-between">
         <span className="rounded-full border border-white/15 bg-black/35 px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-white/70 backdrop-blur">system preview</span>
-        <Sparkles size={16} className="text-[#F97316]" />
+        <Sparkles size={16} className="text-[var(--accent-2)]" />
       </div>
       <div className="absolute bottom-4 left-4 right-4">
         <div className="text-sm font-medium text-white">{projectDisplay(project).name}</div>
@@ -159,7 +159,7 @@ function EvidenceBlock({ project }: { project: Project }) {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {blocks.slice(0, 4).map((block) => (
-        <div key={block.label} className="border-l border-[#A855F7]/35 pl-4">
+        <div key={block.label} className="border-l border-[var(--accent)]/35 pl-4">
           <div className="font-mono text-[9px] uppercase tracking-[0.18em] text-subtle">{block.label}</div>
           <p className="mt-2 text-sm leading-6 text-muted">{block.value}</p>
         </div>

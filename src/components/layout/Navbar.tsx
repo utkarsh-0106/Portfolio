@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Moon, Sun, Github, Linkedin, ArrowUpRight, Sparkles } from 'lucide-react';
-import { useTheme } from '@/context/ThemeContext';
+import { Menu, X, Github, Linkedin, ArrowUpRight, Sparkles } from 'lucide-react';
 import { navLinks, profile } from '@/data/profile';
 import { ButtonLink } from '@/components/ui/Button';
 import { SystemLabel } from '@/components/ui/SystemLabel';
@@ -12,7 +11,6 @@ import { cn } from '@/lib/cn';
 const primaryRoutes = ['/about', '/skills', '/projects', '/experience', '/build-log', '/contact'];
 
 export function Navbar() {
-  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const location = useLocation();
@@ -87,7 +85,7 @@ export function Navbar() {
                       <motion.span
                         layoutId="nav-indicator"
                         transition={{ type: 'spring', stiffness: 420, damping: 34 }}
-                        className="absolute inset-x-3 -bottom-[9px] h-px bg-accent-500 shadow-[0_0_10px_rgba(78,161,255,0.55)]"
+                        className="absolute inset-x-3 -bottom-[9px] h-px bg-accent-500 shadow-[0_0_10px_rgba(var(--accent-rgb),0.55)]"
                       />
                     )}
                   </>
@@ -97,10 +95,6 @@ export function Navbar() {
           </div>
 
           <div className="flex items-center gap-1.5">
-            <div className="mr-1 hidden items-center gap-2 xl:flex">
-              <SystemLabel>Online</SystemLabel>
-            </div>
-
             <Link
               to="/ask"
               aria-label="Ask AI"
@@ -128,14 +122,6 @@ export function Navbar() {
             >
               <Linkedin size={16} />
             </a>
-            <button
-              type="button"
-              onClick={toggleTheme}
-              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
-              className="grid h-9 w-9 place-items-center rounded-lg text-muted transition-colors hover:bg-card hover:text-[var(--text)]"
-            >
-              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
-            </button>
 
             <ButtonLink
               to="/contact"

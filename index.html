@@ -64,7 +64,18 @@
         ]
       }
     </script>
-  </head>
+  <script>
+      (function () {
+        try {
+          var root = document.documentElement;
+          var colorTheme = localStorage.getItem('um-color-theme');
+          var theme = localStorage.getItem('um-theme');
+          root.dataset.colorTheme = colorTheme === 'iron-man' ? 'iron-man' : 'silver-gold';
+          root.classList.toggle('dark', theme !== 'light');
+        } catch (e) {}
+      })();
+    </script>
+</head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>

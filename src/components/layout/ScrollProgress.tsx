@@ -35,7 +35,7 @@ export function ScrollProgress() {
       aria-hidden="true"
     >
       <div
-        className="h-full origin-left bg-accent-500 shadow-[0_0_12px_rgba(78,161,255,0.45)]"
+        className="h-full origin-left bg-accent-500 shadow-[0_0_12px_rgba(var(--accent-rgb),0.45)]"
         style={{ transform: `scaleX(${progress / 100})` }}
       />
     </div>

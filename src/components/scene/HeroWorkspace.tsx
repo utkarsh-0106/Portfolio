@@ -52,13 +52,13 @@ export function HeroWorkspace({ photo, name }: HeroWorkspaceProps) {
           </div>
 
           <div className="hero-workspace__code">
-            <span className="text-purple-300/80">async</span>{' '}
-            <span className="text-violet-300/90">function</span>{' '}
+            <span className="text-accent-strong/80">async</span>{' '}
+            <span className="text-accent-strong">function</span>{' '}
             <span className="text-white/80">buildSystem</span>
             <span className="text-white/35">() {'{'}</span>
             <br />
             <span className="pl-3 text-white/40">return</span>{' '}
-            <span className="text-orange-300/80">reliable</span>
+            <span className="text-accent-2/80">reliable</span>
             <br />
             <span className="pl-6 text-white/35">.api()</span>
             <br />
@@ -75,11 +75,11 @@ export function HeroWorkspace({ photo, name }: HeroWorkspaceProps) {
         <div className="hero-workspace__laptop">
           <div className="hero-workspace__laptop-screen">
             <div className="flex items-center justify-between">
-              <Terminal size={10} className="text-purple-300/70" />
+              <Terminal size={10} className="text-accent-strong/70" />
               <span className="font-mono text-[7px] text-white/30">~/projects</span>
             </div>
             <div className="mt-2 space-y-1 font-mono text-[7px] leading-none">
-              <div className="text-violet-300/70">$ git status</div>
+              <div className="text-accent-strong">$ git status</div>
               <div className="text-emerald-300/60">clean workspace</div>
               <div className="text-white/30">$ npm run build</div>
             </div>

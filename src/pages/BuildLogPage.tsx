@@ -33,7 +33,7 @@ export function BuildLogPage() {
       <PageShell>
       <main className="pb-24 pt-12 sm:pt-16">
         <section aria-labelledby="build-log-title" className="relative">
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-64 rounded-[2rem] bg-[radial-gradient(circle_at_50%_0%,rgba(78,161,255,0.10),transparent_68%)]" />
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-64 rounded-[2rem] bg-[radial-gradient(circle_at_50%_0%,rgba(var(--accent-rgb),0.10),transparent_68%)]" />
 
           <Reveal>
             <div className="relative max-w-3xl">
@@ -106,7 +106,7 @@ export function BuildLogPage() {
                     </div>
 
                     <div className="relative z-10 flex justify-center sm:order-2">
-                      <span className="mt-5 grid h-3.5 w-3.5 place-items-center rounded-full border border-accent-500 bg-[var(--bg)] shadow-[0_0_0_5px_var(--bg),0_0_20px_rgba(78,161,255,0.22)]">
+                      <span className="mt-5 grid h-3.5 w-3.5 place-items-center rounded-full border border-accent-500 bg-[var(--bg)] shadow-[0_0_0_5px_var(--bg),0_0_20px_rgba(var(--accent-rgb),0.22)]">
                         <span className="h-1.5 w-1.5 rounded-full bg-accent-500" />
                       </span>
                     </div>
