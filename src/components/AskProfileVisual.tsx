@@ -21,7 +21,7 @@ const AskProfileVisual: React.FC = () => {
           alt="Profile"
           className="w-full h-auto object-cover object-top"
         />
-        <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm">
+        {/* <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-sm">
           <div className="flex justify-between text-xs">
             <span className="text-accent-strong">BACKEND ENGINEERING × AI</span>
             <span className="text-accent-2">AI SYSTEMS</span>
@@ -35,14 +35,14 @@ const AskProfileVisual: React.FC = () => {
             <span className="text-accent-strong">LEARN</span>
             <span className="text-accent-strong">SHIP</span>
             <span className="text-accent-strong">REPEAT</span>
-          </div>
+          </div> */}
           <div className="mt-3">
-            <span className="text-white font-bold">UTKARSH MAHESHWARI</span>
-            <span className="text-accent-strong text-xs">Computer Science Undergraduate</span>
+            {/* <span className="text-white font-bold">UTKARSH MAHESHWARI</span> */}
+            {/* <span className="text-accent-strong text-xs">Computer Science Undergraduate</span> */}
           </div>
-          <span className="text-accent-strong text-xs mt-1">Ask me anything.</span>
+          {/* <span className="text-accent-strong text-xs mt-1">Ask me anything.</span> */}
         </div>
-      </div>
+      {/* </div> */}
     </motion.div>
   );
 };

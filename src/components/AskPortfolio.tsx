@@ -89,13 +89,13 @@ const technologyGroups = {
   ],
 };
 
-const projectNames = [
-  'JANGO',
-  'Institutional Performance Analytics System',
-  'AI Developer Toolbox',
-  'CineMatch',
-  'DSA Progress Tracker',
-];
+// const projectNames = [
+//   'JANGO',
+//   'Institutional Performance Analytics System',
+//   'AI Developer Toolbox',
+//   'CineMatch',
+//   'DSA Progress Tracker',
+// ];
 
 const cleanText = (value: string) =>
   value
