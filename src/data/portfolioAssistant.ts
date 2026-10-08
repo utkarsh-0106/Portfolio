@@ -60,7 +60,7 @@ const projectGaps: Record<string, string[]> = {
   jango: [
     'No automated test count, coverage figure, or test framework is documented for this project.',
     'No user count, latency, throughput, or production traffic claim is documented.',
-    'No live demo URL is published for this project — only the GitHub repository.',
+    'JANGO is live at https://jango-system.vercel.app.',
     'Upload size limits, chunk sizes, and token limits are not documented in the portfolio.',
   ],
   'ai-developer-toolbox': [

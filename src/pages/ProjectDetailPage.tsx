@@ -119,6 +119,12 @@ export function ProjectDetailPage() {
                       {linkIcon(link.type)} {link.label}
                     </Button>
                   ))}
+                  {project.liveDemo && (
+                    <Button href={project.liveDemo} variant="secondary">
+                      Live Demo ↗
+                    </Button>
+                  )}
+
                   {project.video && (
                     <Button href="#project-demo" variant="secondary">
                       <PlayCircle size={16} /> Watch Demo

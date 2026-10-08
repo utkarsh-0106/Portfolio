@@ -22,12 +22,14 @@ export interface Project {
   sections: ProjectSection[];
   gallery: string[];
   video?: string;
+  liveDemo?: string;
 }
 
 export const projects: Project[] = [
   {
     slug: "jango",
     title: "Jango",
+    liveDemo: "https://jango-system.vercel.app",
     video: "/videos/jango.mp4",
     tagline:
       "A private enterprise document assistant powered by Retrieval-Augmented Generation.",
